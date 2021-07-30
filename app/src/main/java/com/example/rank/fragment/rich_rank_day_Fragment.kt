@@ -105,7 +105,6 @@ class rich_rank_day_Fragment : Fragment() {
 //            TODO("Not yet implemented")
             val item: User = userList[position]
 //            item.get(0).userInfo.age
-            val integer = Integer.parseInt(holder.rank.text.toString())
             Glide.with(context).load(item.userInfo.headUrl).apply(RequestOptions().circleCrop())
                 .into(holder.avatar)
             holder.userName.text = item.userInfo.nick

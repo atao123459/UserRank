@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         var fragmentList = listOf<Fragment>(OneFragment(), TwoFragment())
         viewpager.adapter = ViewPagerAdapter(supportFragmentManager,fragmentList)
 
-        viewpager.setOnPageChangeListener(object:ViewPager.OnPageChangeListener{
+        viewpager.addOnPageChangeListener(object:ViewPager.OnPageChangeListener{
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,

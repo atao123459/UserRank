@@ -78,7 +78,7 @@ class OneFragment:Fragment() {
     class RichRankViewPagerAdapter(fm:FragmentManager,val fragmentList:List<Fragment>):FragmentPagerAdapter(fm){
         override fun getCount() = fragmentList.size
 
-        override fun getItem(position: Int)= fragmentList.get(position)
+        override fun getItem(position: Int)= fragmentList[position]
 
     }
 }
