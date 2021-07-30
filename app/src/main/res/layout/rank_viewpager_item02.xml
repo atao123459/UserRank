@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <ImageView
+       android:id="@+id/iv_title_bg"
+       android:layout_width="270dp"
+       android:layout_height="25dp"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_marginTop="81dp"
+       android:background="@drawable/title_bg"
+       />
+
+   <ImageView
+       android:id="@+id/iv_day_bg"
+       android:layout_width="60dp"
+       android:layout_height="25dp"
+       app:layout_constraintStart_toStartOf="@+id/tv_day_rank"
+       app:layout_constraintTop_toTopOf="@+id/tv_day_rank"
+       android:background="@drawable/tab_bg"/>
+
+   <TextView
+       android:id="@+id/tv_day_rank"
+       android:layout_width="60dp"
+       android:layout_height="25dp"
+       app:layout_constraintStart_toStartOf="@id/iv_title_bg"
+       app:layout_constraintTop_toTopOf="@id/iv_title_bg"
+       android:text="日榜"
+       android:textSize="14sp"
+       android:textColor="#FFFFFF"
+       android:gravity="center_horizontal"
+
+       />
+
+   <ImageView
+       android:id="@+id/iv_week_bg"
+       android:layout_width="60dp"
+       android:layout_height="25dp"
+       app:layout_constraintStart_toStartOf="@+id/tv_week_rank"
+       app:layout_constraintTop_toTopOf="@+id/tv_week_rank"
+       android:background="@drawable/tab_bg"/>
+
+   <TextView
+       android:id="@+id/tv_week_rank"
+       android:layout_width="60dp"
+       android:layout_height="25dp"
+       android:text="周榜"
+       android:textSize="14sp"
+       android:textColor="#ffffff"
+       app:layout_constraintStart_toEndOf="@id/tv_day_rank"
+       app:layout_constraintTop_toTopOf="@id/iv_title_bg"
+       android:layout_marginLeft="46dp"
+       android:gravity="center_horizontal"
+       />
+
+   <ImageView
+       android:id="@+id/iv_month_bg"
+       android:layout_width="60dp"
+       android:layout_height="25dp"
+       app:layout_constraintStart_toStartOf="@+id/tv_month_rank"
+       app:layout_constraintTop_toTopOf="@+id/tv_month_rank"
+       android:background="@drawable/tab_bg"
+       />
+
+   <TextView
+       android:id="@+id/tv_month_rank"
+       android:layout_width="60dp"
+       android:layout_height="25dp"
+       android:text="月榜"
+       android:textSize="14sp"
+       android:textColor="#ffffff"
+       app:layout_constraintStart_toEndOf="@id/tv_week_rank"
+       app:layout_constraintTop_toTopOf="@id/iv_title_bg"
+       android:layout_marginLeft="46dp"
+       android:gravity="center_horizontal"
+       />
+
+   <androidx.viewpager.widget.ViewPager
+       android:id="@+id/viewpager_rich_rank"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintHorizontal_bias="0.0"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
