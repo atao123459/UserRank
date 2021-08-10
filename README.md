@@ -1,0 +1,3 @@
+# UserRank
+一个类似于直播间用户贡献度排行的安卓demo
+使用纯kotlin编写，使用到的技术有recycleview，viewpager，constraintlayout，lottie动画来编写UI，使用Glide加载图片，使用Gson解析json数据
