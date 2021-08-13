@@ -46,6 +46,7 @@ class rich_rank_day_Fragment : Fragment() {
         tv_rich_02.text = second.value.toString()
         dataList.removeAt(0)
 
+
         val third = dataList[0]
         Glide.with(view.context).load(third.userInfo.headUrl).apply(RequestOptions().circleCrop()).into(iv_rank03)
         tv_name_03.text = third.userInfo.nick
@@ -72,12 +73,12 @@ class rich_rank_day_Fragment : Fragment() {
         layoutManager.orientation = LinearLayoutManager.VERTICAL
         rl_rank.layoutManager = layoutManager
 
-        val adapter = RankDayAdapter(view.context, dataList)
+        val adapter = RankDayAdapter(dataList)
         rl_rank.adapter = adapter
 
     }
 
-    class RankDayAdapter(val context: Context, val userList: ArrayList<User>) :
+    class RankDayAdapter( val userList: ArrayList<User>) :
         RecyclerView.Adapter<RankDayAdapter.ViewHolder>() {
 
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -105,14 +106,17 @@ class rich_rank_day_Fragment : Fragment() {
 //            TODO("Not yet implemented")
             val item: User = userList[position]
 //            item.get(0).userInfo.age
-            Glide.with(context).load(item.userInfo.headUrl).apply(RequestOptions().circleCrop())
+
+            Glide.with(holder.avatar.context).load(item.userInfo.headUrl).apply(RequestOptions().circleCrop())
                 .into(holder.avatar)
             holder.userName.text = item.userInfo.nick
             holder.richNum.text = item.value.toString()
             holder.rank.text = item.rank
-            Glide.with(context).load(item.userInfo.wealthLevel.image_url).centerCrop()
+            holder.icon1.context
+            Glide.with(holder.icon1.context).load(item.userInfo.wealthLevel.image_url).centerCrop()
                 .into(holder.icon1)
-            Glide.with(context).load(item.userInfo.charmLevel.image_url).centerCrop()
+            holder.icon2.context
+            Glide.with(holder.icon2.context).load(item.userInfo.charmLevel.image_url).centerCrop()
                 .into(holder.icon2)
             if (item.userInfo.is_liang_num) {
                 holder.icon3.setImageResource(R.drawable.lh)
